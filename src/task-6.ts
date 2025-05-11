@@ -1,12 +1,22 @@
 // Задача 6
-// const user = {
-//   name: "Alice",
-//   address: {
-//     city: "Kyiv"
-//   }
-// };
 
-// console.log(user.address?.city);
+interface Address {
+    city: string;
+}
+
+interface User {
+    name: string;
+    address?: Address;
+}
+
+const user: User = {
+  name: "Alice",
+  address: {
+    city: "Kyiv"
+  }
+};
+
+console.log(user.address?.city);
 
 // Завдання:
 // Створіть тип для user.

@@ -1,9 +1,17 @@
 // Задача 8
-// enum Role {
-//   Admin,
-//   User,
-//   Guest
-// }
+enum Role {
+  Admin,
+  User,
+  Guest
+}
+
+const getPermissions = (role: Role): string[] => {
+    if (role === Role.Admin) return ["create", "read", "update", "delete"];
+    if (role === Role.User) return ["read", "update"];
+    return ["read"];
+}
+
+getPermissions(Role.Admin);
 
 // Завдання:
 // 1. Створіть функцію getPermissions, яка приймає параметр role типу Role.

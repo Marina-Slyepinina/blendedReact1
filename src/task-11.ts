@@ -1,4 +1,17 @@
 // Задача 11
+
+interface User {
+    username: string;
+    age: number;
+    city?: string;
+}
+
+type Role = "admin" | "user" | "guest";
+
+function createUserCard (user: User, role: Role, city = "Unknown"): string {
+    return `${user.username} (${user.age}) — ${role} from ${user.city}`;
+}
+
 // 1. Створіть власний тип User, який має:
 // обов'язкове поле username (рядок)
 // обов'язкове поле age (число)
@@ -10,7 +23,7 @@
 // 4. Якщо city немає — виводьте "Unknown"
 // 5. Функція повертає рядок у форматі "[username] ([age]) — [role] from [city]”.
 // Наприклад:
-// console.log(createUserCard({ username: "Anna", age: 25, city: "Kyiv" }, "admin"));
+console.log(createUserCard({ username: "Anna", age: 25, city: "Kyiv" }, "admin"));
 // Anna (25) — admin from Kyiv
-// console.log(createUserCard({ username: "Max", age: 30 }, "guest"));
+console.log(createUserCard({ username: "Max", age: 30 }, "guest"));
 // Max (30) — guest from Unknown

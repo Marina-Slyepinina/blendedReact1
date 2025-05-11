@@ -1,7 +1,23 @@
 // Задача 10
 // У вас є масив імен користувачів:
 
-// const users = ["alice", "bob", "charlie"];
+interface User {
+    id: number;
+    name: string;
+}
+
+const users: string[] = ["alice", "bob", "charlie"];
+
+const toUserObjects = (arr: string[]): User[] => {
+    return arr.map((item, index): User => {
+        return {
+            id: index + 1,
+            name: item,    
+        }
+    });
+}
+
+console.log(toUserObjects(users));
 
 // Завдання:
 // 1. Створіть типізовану функцію toUserObjects, яка приймає масив рядків (імен користувачів).
@@ -13,4 +29,3 @@
 // Приклад виклику:
 // toUserObjects(users);
 // Повертає: [{ id: 1, name: "alice" }, { id: 2, name: "bob" }, { id: 3, name: "charlie" }]
-

@@ -1,4 +1,40 @@
 // Задача 9
+
+interface Container<T> {
+    items: T[];
+    addItem(item: T): void;
+    getItem(index: number): T;
+}
+
+const numberContainer: Container<number> = {
+    items: [1, 2, 3, 4, 5],
+    addItem(item) {
+        this.items.push(item);
+    },
+    getItem(index) {    
+        return this.items[index];
+    }
+}
+
+const stringContainer: Container<string> = {
+    items: ["one", "two", "three", "four", "five"],
+    addItem(item) {
+        this.items.push(item);
+    },
+    getItem(index) {
+        return this.items[index];
+    }
+}
+
+const getLastElement = <T> (container: Container<T>): T => {
+    const lastElement = container.getItem(container.items.length - 1);
+    console.log(lastElement);
+    return lastElement;
+}
+
+getLastElement(numberContainer);
+getLastElement(stringContainer);
+
 // Завдання:
 // 1. Створіть інтерфейс Container, що містить:
 // масив items однакового типу для зберігання елементів.
